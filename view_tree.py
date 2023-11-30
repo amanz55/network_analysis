@@ -18,11 +18,11 @@ def tree(dir_path: Path, level: int=-1, limit_to_directories: bool=False,
     directories = 0
     def inner(dir_path: Path, prefix: str='', level=-1):
         nonlocal files, directories
-        if not level: 
+        if not level:
             return # 0, stop iterating
         if limit_to_directories:
             contents = [d for d in dir_path.iterdir() if d.is_dir()]
-        else: 
+        else:
             contents = list(dir_path.iterdir())
         pointers = [tee] * (len(contents) - 1) + [last]
         for pointer, path in zip(pointers, contents):

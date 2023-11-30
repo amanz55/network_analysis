@@ -34,7 +34,7 @@ class SlackDataLoader:
         '''
         self.path = path
         self.channels = self.get_channels()
-        self.users = self.get_ussers()
+        self.users = self.get_users()
     
 
     def get_users(self):
@@ -71,7 +71,7 @@ class SlackDataLoader:
         for user in self.users:
             userNamesById[user['id']] = user['name']
             userIdsByName[user['name']] = user['id']
-        return userNamesById, userIdsByName        
+        return userNamesById, userIdsByName
 
 
 
